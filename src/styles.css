@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+@theme {
+    --font-serif: "Playfair Display", sans-serif;
+    --font-cursive: "Ephesis", serif;
+    @keyframes slide-fade-in {
+        from {
+            translate: 0 32px;
+            opacity: 0;
+        }
+        to {
+            translate: 0 0;
+            opacity: 1;
+        }
+    }
+
+    @keyframes zoom-in {
+        from {
+            scale: 1.08;
+        }
+        to {
+            scale: 1.16;
+        }
+    }
+
+    /* Map it to a utility name */
+    --animate-slide-fade-in: slide-fade-in 1.7s ease-out forwards;
+    --animate-zoom-in: zoom-in 1.8s ease-out forwards;
+}
+
+@layer base {
+    html {
+        @apply font-serif text-olive-700 bg-yellow-50;
+    }
+}
