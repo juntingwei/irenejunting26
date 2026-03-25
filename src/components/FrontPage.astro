@@ -1,0 +1,152 @@
+---
+import backgroundImage from '../assets/background.jpg';
+---
+
+<section class="hero" id="hero">
+    <div class="hero-bg" aria-hidden="true">
+        <div
+                class="hero-bg-inner"
+                style={`background-image: url(${backgroundImage.src});`}
+        ></div>
+    </div>
+
+    <div class="hero-content">
+        <h1 class='move-in'>Irene <br/><span class="script">and</span> Junting</h1>
+        <h2 class='move-in'>are getting married!</h2>
+    </div>
+</section>
+
+<section class="content">
+    <h2>Photos and music to follow the conclusion of the wedding</h2>
+</section>
+
+<script is:inline>
+    const bg = document.querySelector('.hero-bg');
+    const title = document.querySelector('.move-in');
+
+    function updateParallax() {
+        const scrollY = window.scrollY;
+
+        if (bg) {
+            bg.style.transform = `translateY(${scrollY * 0.35}px)`;
+        }
+    }
+
+    window.addEventListener('scroll', updateParallax, { passive: true });
+    window.addEventListener('resize', updateParallax);
+
+    window.addEventListener('load', () => {
+        bg?.classList.add('intro-play');
+        title?.classList.add('intro-play');
+        updateParallax();
+    });
+</script>
+
+<style>
+    .hero {
+        position: relative;
+        height: 100dvh;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .hero-bg {
+        position: absolute;
+        inset: -10%;
+        will-change: transform;
+        z-index: 0;
+    }
+
+    .hero-bg-inner {
+        position: absolute;
+        inset: 0;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        transform: scale(1.08);
+        filter: saturate(0.6) sepia(0.5) contrast(0.6);
+        will-change: transform;
+    }
+
+    .hero-bg.intro-play .hero-bg-inner {
+        animation: bgZoom 1.8s ease-out forwards;
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 2;
+        padding: 2rem;
+        max-width: 900px;
+        color: white;
+        text-transform: uppercase;
+        text-shadow: 0 4px 24px rgba(0, 0, 0, 0.45);
+    }
+
+    h1 {
+        margin: 0;
+        font-size: clamp(3rem, 8vw, 7rem);
+        line-height: 0.95;
+        text-shadow: 0 4px 24px rgba(0, 0, 0, 0.45);
+        transform: translateY(28px);
+        opacity: 0;
+        will-change: transform, opacity;
+    }
+
+    .move-in {
+        animation: titleIn 1.7s ease-out 0.1s forwards;
+    }
+
+    h1 span {
+        display: block;
+        font-family: var(--font-script),cursive;
+        line-height: 0.4;
+        text-transform: none;
+        margin: 0;
+    }
+
+    .content {
+        min-height: 100dvh;
+        box-sizing: border-box;
+        padding: 4rem 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        background: #fdfae9;
+        color: #767563;
+    }
+
+    .content h2 {
+        margin: 0;
+        font-size: 3rem;
+    }
+
+    .content p {
+        max-width: 42rem;
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.8);
+    }
+
+    @keyframes titleIn {
+        from {
+            opacity: 0;
+            transform: translateY(32px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes bgZoom {
+        from {
+            transform: scale(1.08);
+        }
+        to {
+            transform: scale(1.16);
+        }
+    }
+</style>
