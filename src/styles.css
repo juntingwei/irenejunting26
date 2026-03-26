@@ -1,8 +1,10 @@
 @import "tailwindcss";
+@import "@fontsource/cormorant-garamond/variable.css";
+@import "@fontsource/playfair-display/variable.css";
 
 @theme {
-    --font-serif: "Playfair Display", sans-serif;
-    --font-cursive: "Ephesis", serif;
+    --font-serif: "Playfair Display", serif;
+    --font-cursive: "Ephesis", sans-serif;
     @keyframes slide-fade-in {
         from {
             translate: 0 32px;
