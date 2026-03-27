@@ -1,6 +1,4 @@
 @import "tailwindcss";
-@import "@fontsource/cormorant-garamond/variable.css";
-@import "@fontsource/playfair-display/variable.css";
 
 @theme {
     --font-serif: "Playfair Display", serif;
