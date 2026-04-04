@@ -35,7 +35,7 @@ function Photos() {
                     </h2>
                     
                     {/* Photo Grid */}
-                    <div className="grid grid-cols-2 md:grid-cols-5 gap-6 px-8">
+                    <div className="grid grid-cols-2 md:grid-cols-5 gap-6 px-4 md:px-8">
                         {images.map((image, index) => (
                             <div 
                                 key={index}
@@ -44,7 +44,7 @@ function Photos() {
                                 <img
                                     src={image.src}
                                     alt={image.alt}
-                                    className="w-full h-auto object-cover rounded-lg shadow-md"
+                                    className="w-full h-auto object-cover rounded-lg shadow-md aspect-[501/892]"
                                     loading="lazy"
                                 />
                             </div>
