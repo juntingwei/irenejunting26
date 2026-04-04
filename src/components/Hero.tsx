@@ -3,10 +3,10 @@ import redbarnImage from "../assets/redbarn.jpg";
 
 function Hero() {
     return (
-        <Parallax strength={400} className='bg-olive-400 text-white h-dvh flex flex-col justify-center items-center text-center
+        <Parallax strength={400} className='bg-olive-400 text-white h-screen flex flex-col justify-center items-center text-center
         '>
-            <Background className='h-dvh w-dvw saturate-70 contrast-60 animate-zoom-in'>
-                <img src={redbarnImage} alt='' className='object-cover w-screen h-dvh pointer-events-none'/>
+            <Background className='h-lvh w-screen saturate-70 contrast-60 animate-zoom-in'>
+                <img src={redbarnImage} alt='' className='object-cover w-full h-full pointer-events-none'/>
             </Background>
             <div className="animate-slide-fade-in flex flex-col items-center">
                 <h1 className='text-7xl font-thin uppercase mb-2'>
