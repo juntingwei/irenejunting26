@@ -30,6 +30,6 @@
 
 @layer base {
     html {
-        @apply font-serif text-olive-700 bg-yellow-50;
+        @apply font-serif text-olive-700 bg-[#FAEEEA];
     }
 }
